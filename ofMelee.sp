@@ -2,7 +2,7 @@
 #include <sdktools>
 
 #define PLUGIN_AUTHOR "bryson"
-#define PLUGIN_VERSION "1.0.0"
+#define PLUGIN_VERSION "1.0.1"
 
 #pragma semicolon 1
 #pragma newdecls required
@@ -30,6 +30,7 @@ public void OnPluginStart()
 
 public void OnMapStart()
 {
+	ServerCommand("sm_ofmelee 0");
 	CreateTimer(1, meleeOn);
 }
 
@@ -44,6 +45,7 @@ public void Cvar_enabled(Handle convar, const char[] oldValue, const char[] newV
 	if (g_bEnabled)
 	{
 		meleeOn(INVALID_HANDLE);
+		ServerCommand("say ---------------------");
 		ServerCommand("say Melee Mode Activated!");
 		ServerCommand("say ---------------------");
 		ServerCommand("of_weaponspawners 0");
@@ -54,6 +56,7 @@ public void Cvar_enabled(Handle convar, const char[] oldValue, const char[] newV
 	}
 	else
 	{
+		ServerCommand("say -----------------------");
 		ServerCommand("say Melee Mode Deactivated!");
 		ServerCommand("say -----------------------");
 		ServerCommand("exec config_dm.cfg"); //Executes dm config.
