@@ -13,7 +13,7 @@ Open Fortress Melee Only Plugin (Deathmatch mutator only!)
 
 `sm_ofmelee 1|0`
 
-- Enable/Disable the plugin
+- Enable/Disable the plugin (Note: Admin Flag: `c` required to execute command!)
 
 **ConVar**
 
